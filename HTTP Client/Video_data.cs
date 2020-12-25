@@ -26,14 +26,13 @@ namespace Youtube_WPF
         string strWorkPath = System.IO.Path.GetDirectoryName(strExeFilePath);
         DateTime now = DateTime.Now;
 
-        public async Task Video_Metadata(string InputFile , ProgressBar bar)
+        public async Task Video_Metadata(string InputFile , ProgressBar bar, Label lb)
         {
             string lines = System.IO.File.ReadAllText(InputFile);
             List<Youtube> m = JsonConvert.DeserializeObject<List<Youtube>>(lines);
-
             List<string> IDlist = new List<string>();
             List<Metadata> dataarray = new List<Metadata>();
-
+            bar.Maximum = m.Count;
 
             //POSSIBLE ID VALUES
             foreach (Youtube s in m)
@@ -43,7 +42,6 @@ namespace Youtube_WPF
             }
 
             var videoListRequest = Video_data.youtubeService.Videos.List("snippet, contentDetails, statistics");
-            int cnt = 1;
 
             for (int i = 0; i < IDlist.Count - 50; i += 50) // 
             {
@@ -67,10 +65,11 @@ namespace Youtube_WPF
                     return data;
                 }));
 
-                bar.Value = cnt;
-                cnt++;
+                bar.Value = i;
             }
 
+            bar.Value = m.Count;
+            lb.Content = m.Count.ToString(); 
             string OutputPath1 = strWorkPath + "/VideoDetails.json";
             SaveJSON<Metadata>(OutputPath1, dataarray);
 

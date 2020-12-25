@@ -61,16 +61,17 @@ namespace Youtube_WPF
 
             //Call Google API
             Video_data CT = new Video_data();
+            
             await CT.Catogery_Data();
-            await CT.Video_Metadata(Path, ProgressBar1);
+            await CT.Video_Metadata(Path, ProgressBar1, EntryLabel);
 
             //Call HTTP Method
             //Catogries CTS = new Catogries();
             //await CTS.GetCatogries(APIKEY);
             //VideoDetails VD = new VideoDetails();
             //await VD.GetVideo(APIKEY);
-
-            ProgressBar1.Value = 500;
+              
+            
             MessageBox.Show("Task Completed", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }

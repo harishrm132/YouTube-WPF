@@ -38,21 +38,20 @@
                    VerticalAlignment="Center" Margin="10,0,10,0"/>
         <TextBox x:Name="History" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center"
                  MinWidth="130" MinHeight="20" Margin="10,0,10,0" IsEnabled="False" 
-                 Text="Load the file -->" /> 
+                 Text="Load the file -->" />
 
-        <Button x:Name="Execute" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3"
+        <Button x:Name="Execute" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"
                 Content="Execute" FontSize="24" VerticalAlignment="Bottom" HorizontalAlignment="Center"
                     Height="50" Width="200" Margin="10" Style="{StaticResource PrimaryButton}" Click="Execute_ClickAsync"/>
 
-        <ProgressBar x:Name="ProgressBar1" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3"
-                     HorizontalAlignment="Center" Height="18" VerticalAlignment="Top" Width="262" Margin="1" Grid.RowSpan="2" Maximum="500"/>
+        <ProgressBar x:Name="ProgressBar1" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="3"
+                     HorizontalAlignment="Center" Height="18" VerticalAlignment="Top" Width="262" Margin="1,1,1,1" Grid.RowSpan="2" Maximum="500"/>
 
         <Button x:Name="Search" Grid.Column="3" Grid.Row="3" Content="S" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                     Width="40" Height="40" Margin="5" Style="{StaticResource PrimaryButton}" Click="Search_Click"/>
 
-
-        <!--<StackPanel Grid.Column="1" Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Background="LightBlue" IsEnabled="False" Visibility="Hidden">
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Background="LightBlue" IsEnabled="False" Visibility="Visible">
             <TextBlock Text="Total Entries" HorizontalAlignment="Center" Margin="5"/>
             <Label x:Name="EntryLabel" Content="Nos" HorizontalAlignment="Center"/>
             <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="15">
@@ -60,10 +59,7 @@
                     <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="1" Softness="2" />
                 </Border.BitmapEffect>
             </Border>
-        </StackPanel>-->
-
-
-        
+        </StackPanel>
 
     </Grid>
 </Window>
