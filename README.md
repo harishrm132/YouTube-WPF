@@ -3,7 +3,8 @@
  With Google Takeout and the YouTube API, analyzing your personal YouTube history is easy.
  
  # Watch History
- Get YouTube Watch History---> http://google.com/takeout and log in with your personal account. 
+ Get YouTube Watch History---> http://google.com/takeout  
+ 	log in with your personal account. 
 	Select YouTube and YouTube Music and then select HISTORY from list. In format options, choose JSON format. Export the File to Local Folder.
 	
  # YouTube API - Get more data about videos
